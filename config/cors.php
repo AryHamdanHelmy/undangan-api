@@ -19,7 +19,10 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('CORS_ALLOWED_ORIGINS', 'http://localhost:5173')],
+    'allowed_origins' => [
+        env('CORS_ALLOWED_ORIGINS',
+         'http://localhost:5173',
+         'https://undangan-frontend-omega.vercel.app',)],
 
     'allowed_origins_patterns' => [],
 

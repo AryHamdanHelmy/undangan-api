@@ -25,13 +25,13 @@ class GuestbookController extends Controller
         'attendance'  => 'required|in:hadir,tidak_hadir,ragu',
         'guest_count' => 'required|integer|min:1',
         'message'     => 'nullable|string|max:1000',
-        'guest_token' => 'nullable|string',
+        //'guest_token' => 'nullable|string',
     ]);
 
-    $guestId = null;
-    if (!empty($validated['guest_token'])){
-        $guestId = Guest::where('token', $validated['guest_token'])->value('id');
-    }
+    // $guestId = null;
+    // if (!empty($validated['guest_token'])){
+    //     $guestId = Guest::where('token', $validated['guest_token'])->value('id');
+    // }
 
     $entry = Guestbook::create([
         'invitation_id' => $invitationId,
